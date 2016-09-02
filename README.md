@@ -1,12 +1,12 @@
 # koa-combine-routers
 Convenience middleware for composing multiple instances of [koa-router](https://github.com/alexmingoia/koa-router).
 
-For usage with Koa 2.X, check out the [`next`](https://github.com/saadq/koa-combine-routers/tree/next) branch.
+For usage with Koa 1.X, check out the [`master`](https://github.com/saadq/koa-combine-routers/tree/master) branch.
 
 ## Installation
 
 ```
-$ npm install koa-combine-routers
+$ npm install koa-combine-routers@next
 ```
 
 ## Usage
@@ -14,8 +14,8 @@ $ npm install koa-combine-routers
 **app.js**
 
 ```javascript
-const Koa = require('koa')
-const router = require('./routes')
+import Koa = from 'koa'
+import router = from './routes'
 
 const app = new Koa()
 
@@ -25,21 +25,21 @@ app.use(router)
 **routes.js**
 
 ```javascript
-const Router = require('koa-router')
-const combineRouters = require('koa-combine-routers')
+import Router = from 'koa-router'
+import combineRouters = from 'koa-combine-routers'
 
 const dogRouter = new Router({ prefix: '/dogs' })
 const catRouter = new Router({ prefix: '/cats' })
 
-dogRouter.get('/', function * (next) { /* Do something */ })
-catRouter.get('/', function * (next) { /* Do something */ })
+dogRouter.get('/', async (ctx, next) => { /* Do something */ })
+catRouter.get('/', async (ctx, next) => { /* Do something */ })
 
 const router = combineRouters([
   dogRouter,
   catRouter
 ])
 
-module.exports = router
+export default router
 ```
 
 ## API
