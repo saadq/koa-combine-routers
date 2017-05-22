@@ -34,10 +34,10 @@ const catRouter = new Router({ prefix: '/cats' })
 dogRouter.get('/', function * (next) { /* Do something */ })
 catRouter.get('/', function * (next) { /* Do something */ })
 
-const router = combineRouters([
+const router = combineRouters(
   dogRouter,
   catRouter
-])
+)
 
 module.exports = router
 ```
