@@ -1,12 +1,11 @@
 # koa-combine-routers
-Convenience middleware for composing multiple instances of [koa-router](https://github.com/alexmingoia/koa-router) or [koa-tree-router](https://github.com/steambap/koa-tree-router).
 
-For usage with Koa 2.X, check out the [`next`](https://github.com/saadq/koa-combine-routers/tree/next) branch.
+Convenience middleware for composing multiple instances of [koa-router](https://github.com/alexmingoia/koa-router) or [koa-tree-router](https://github.com/steambap/koa-tree-router).
 
 ## Installation
 
 ```
-$ npm install koa-combine-routers
+$ npm install koa-combine-routers@old
 ```
 
 ## Usage
@@ -28,25 +27,28 @@ app.use(router)
 const Router = require('koa-router')
 const combineRouters = require('koa-combine-routers')
 
-const dogRouter = new Router({ prefix: '/dogs' })
-const catRouter = new Router({ prefix: '/cats' })
+const dogRouter = new Router()
+const catRouter = new Router()
 
-dogRouter.get('/', function * (next) { /* Do something */ })
-catRouter.get('/', function * (next) { /* Do something */ })
+dogRouter.get('/', function*() {
+  this.body = 'ok'
+})
 
-const router = combineRouters(
-  dogRouter,
-  catRouter
-)
+catRouter.get('/', function*() {
+  this.body = 'ok'
+})
+
+const router = combineRouters(dogRouter, catRouter)
 
 module.exports = router
 ```
 
 ## API
 
-| param |          type           |                   description                   |
-|-------|-------------------------|-------------------------------------------------|
-|routers|`Object[]` \| `...Object`|An array of routers or multiple router arguments.|
+| param   | type                      | description                                       |
+| ------- | ------------------------- | ------------------------------------------------- |
+| routers | `Object[]` \| `...Object` | An array of routers or multiple router arguments. |
 
 #### combineRouters(routers)
+
 #### combineRouters(...routers)
