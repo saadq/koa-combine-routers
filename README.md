@@ -1,5 +1,5 @@
 # koa-combine-routers
-Convenience middleware for composing multiple instances of [koa-router](https://github.com/alexmingoia/koa-router).
+Convenience middleware for composing multiple instances of [koa-router](https://github.com/alexmingoia/koa-router) or [koa-tree-router](https://github.com/steambap/koa-tree-router).
 
 For usage with Koa 2.X, check out the [`next`](https://github.com/saadq/koa-combine-routers/tree/next) branch.
 

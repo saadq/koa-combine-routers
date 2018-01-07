@@ -16,7 +16,10 @@ function combineRouters (routers) {
 
   routers.forEach(function (router) {
     middleware.push(router.routes())
-    middleware.push(router.allowedMethods())
+
+    if (router.allowedMethods) {
+      middleware.push(router.allowedMethods())
+    }
   })
 
   return compose(middleware)
