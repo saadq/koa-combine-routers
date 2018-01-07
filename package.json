@@ -1,6 +1,6 @@
 {
   "name": "koa-combine-routers",
-  "version": "0.0.0",
+  "version": "1.1.0",
   "description": "Middleware for composing multiple instances of koa-router.",
   "main": "index.js",
   "author": "Saad Quadri",
