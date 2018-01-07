@@ -9,7 +9,7 @@
     "test": "standard"
   },
   "dependencies": {
-    "koa-compose": "^2.4.0"
+    "koa-compose": "^4.0.0"
   },
   "devDependencies": {
     "standard": "^8.0.0"
