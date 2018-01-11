@@ -30,11 +30,11 @@ const combineRouters = require('koa-combine-routers')
 const dogRouter = new Router()
 const catRouter = new Router()
 
-dogRouter.get('/', function*() {
+dogRouter.get('/dogs', function*() {
   this.body = 'ok'
 })
 
-catRouter.get('/', function*() {
+catRouter.get('/cats', function*() {
   this.body = 'ok'
 })
 
