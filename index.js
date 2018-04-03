@@ -7,19 +7,16 @@ var compose = require('koa-compose')
  * @param  {Object[] | ...Object} routers
  * @return {GeneratorFunction}
  */
-function combineRouters (routers) {
+function combineRouters(routers) {
   if (!Array.isArray(routers)) {
     routers = Array.prototype.slice.call(arguments)
   }
 
   var middleware = []
 
-  routers.forEach(function (router) {
+  routers.forEach(function(router) {
     middleware.push(router.routes())
-
-    if (router.allowedMethods) {
-      middleware.push(router.allowedMethods())
-    }
+    middleware.push(router.allowedMethods())
   })
 
   return compose(middleware)
