@@ -6,4 +6,6 @@ type Middleware = Compose.ComposedMiddleware<Router.IRouterContext>
 declare function combineRouters(routers: Array<Router>): () => Middleware
 declare function combineRouters(...routers: Array<Router>): () => Middleware
 
-export default combineRouters
+declare namespace combineRouters {}
+
+export = combineRouters
