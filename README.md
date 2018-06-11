@@ -20,7 +20,7 @@ const router = require('./routes')
 
 const app = new Koa()
 
-app.use(router)
+app.use(router())
 ```
 
 **routes.js**
@@ -40,7 +40,10 @@ catRouter.get('/cats', async ctx => {
   ctx.body = 'ok'
 })
 
-const router = combineRouters(dogRouter, catRouter)
+const router = combineRouters(
+  dogRouter,
+  catRouter
+)
 
 module.exports = router
 ```

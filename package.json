@@ -12,17 +12,18 @@
   "license": "MIT",
   "scripts": {
     "format": "prettier --write \"*.{js,ts}\"",
-    "test": "tsc --noEmit"
+    "test": "tsc --noEmit && lynt"
   },
   "dependencies": {
-    "@types/koa-compose": "^3.2.2",
-    "@types/koa-router": "^7.0.27",
-    "koa-compose": "^4.0.0"
+    "@types/koa-compose": "3.2.2",
+    "@types/koa-router": "7.0.27",
+    "koa-compose": "4.1.0"
   },
   "devDependencies": {
     "koa": "^2.5.0",
     "koa-router": "^7.4.0",
     "koa-tree-router": "^0.3.0",
+    "lynt": "^0.3.0",
     "prettier": "^1.11.1",
     "typescript": "^2.8.1"
   }
