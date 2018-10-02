@@ -1,6 +1,6 @@
 import * as Koa from 'koa'
 import * as Router from 'koa-router'
-import * as combineRouters from './'
+import * as combineRouters from '.'
 
 const router1 = combineRouters(new Router(), new Router())
 const router2 = combineRouters([new Router(), new Router()])

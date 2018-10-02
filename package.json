@@ -16,15 +16,15 @@
   },
   "dependencies": {
     "@types/koa-compose": "3.2.2",
-    "@types/koa-router": "7.0.27",
+    "@types/koa-router": "^7.0.32",
     "koa-compose": "4.1.0"
   },
   "devDependencies": {
-    "koa": "^2.5.0",
+    "@types/koa": "^2.0.46",
+    "koa": "^2.5.3",
     "koa-router": "^7.4.0",
-    "koa-tree-router": "^0.3.0",
     "lynt": "^0.3.0",
-    "prettier": "^1.11.1",
-    "typescript": "^2.8.1"
+    "prettier": "^1.14.3",
+    "typescript": "^3.1.1"
   }
 }
